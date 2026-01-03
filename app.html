@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Study Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            vertical-align: middle;
+        }
+
+        th {
+            background: #e9ecef;
+        }
+
+        input[type="text"] {
+            width: 95%;
+            padding: 6px;
+            font-size: 14px;
+        }
+
+        .done {
+            text-align: center;
+        }
+
+        .completed {
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+
+<h1>📘 Daily Study Timetable</h1>
+
+<table>
+    <tr>
+        <th>Time</th>
+        <th>Topic Learned</th>
+        <th>Completed</th>
+    </tr>
+
+    <tr>
+        <td>4:00 am – 6:00 am</td>
+        <td><input type="text" placeholder="Enter topic (e.g. Java OOP)"></td>
+        <td class="done"><input type="checkbox" onchange="markDone(this)"></td>
+    </tr>
+
+    <tr>
+        <td>6:00 am – 7:30 am</td>
+        <td><input type="text" placeholder="Exercise / Revision"></td>
+        <td class="done"><input type="checkbox" onchange="markDone(this)"></td>
+    </tr>
+
+    <tr>
+        <td>8:00 am – 10:30 am</td>
+        <td><input type="text" placeholder="Git / Certification"></td>
+        <td class="done"><input type="checkbox" onchange="markDone(this)"></td>
+    </tr>
+
+    <tr>
+        <td>11:00 am – 5:00 pm</td>
+        <td><input type="text" placeholder="Job / Java Practice"></td>
+        <td class="done"><input type="checkbox" onchange="markDone(this)"></td>
+    </tr>
+
+    <tr>
+        <td>6:00 pm – 10:00 pm</td>
+        <td><input type="text" placeholder="Mechanical / Material Science"></td>
+        <td class="done"><input type="checkbox" onchange="markDone(this)"></td>
+    </tr>
+
+    <tr>
+        <td>10:00 pm – 11:00 pm</td>
+        <td><input type="text" placeholder="Personal Development / English"></td>
+        <td class="done"><input type="checkbox" onchange="markDone(this)"></td>
+    </tr>
+</table>
+
+<script>
+    function markDone(checkbox) {
+        const row = checkbox.parentElement.parentElement;
+        if (checkbox.checked) {
+            row.classList.add("completed");
+        } else {
+            row.classList.remove("completed");
+        }
+    }
+</script>
+
+</body>
+</html>
